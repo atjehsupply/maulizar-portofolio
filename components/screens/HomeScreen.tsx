@@ -6,7 +6,7 @@ import PhoneFrame from "@/components/phone/PhoneFrame";
 
 export default function HomeScreen() {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-[#05050A]">
+    <div className="relative h-full w-full overflow-hidden bg-[#05050A]">
       {/* Galaxy canvas */}
       <GalaxyCanvas />
 
@@ -41,7 +41,7 @@ export default function HomeScreen() {
       </motion.div>
 
       {/* iPhone di tengah */}
-      <div className="relative z-10 flex min-h-screen items-center justify-center">
+      <div className="relative z-10 flex h-full items-center justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -50,6 +50,18 @@ export default function HomeScreen() {
           <PhoneFrame />
         </motion.div>
       </div>
+
+      {/* Copyright — tengah bawah, hanya di HomeScreen */}
+      <motion.div
+        className="pointer-events-none absolute bottom-4 left-1/2 z-20 -translate-x-1/2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.8 }}
+      >
+        <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/20">
+          © MaulizarNauval 2024
+        </p>
+      </motion.div>
     </div>
   );
 }
